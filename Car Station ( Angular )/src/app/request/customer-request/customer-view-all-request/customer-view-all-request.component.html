@@ -1,0 +1,56 @@
+<div class="bordercp-3 mt-4">
+
+    <div class="row pb-2">
+        <h2 class=" col-6 mb-2" style="font-size:40px; color:#9AC8CD;">My Requests</h2>
+        <div class="col-6 text-end">
+            <a class="btn text-light mb-2" [routerLink]="[ '/ViewCustomerProfile' ]">Back</a>
+        </div>
+        <hr />
+    </div>
+
+    <table mat-table [dataSource]="requests" class="custom-table border shadow">
+
+        <ng-container matColumnDef="ServicesType">
+            <th mat-header-cell *matHeaderCellDef style="font-size:20px;">Service Type</th>
+            <td mat-cell *matCellDef="let requests">{{serviceNames.get(requests.serviceId)}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="VIN">
+            <th mat-header-cell *matHeaderCellDef style="font-size:20px;">Car</th>
+            <td mat-cell *matCellDef="let requests">{{carNames.get(requests.carId)}}</td>
+          </ng-container>
+          
+
+        <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef style="font-size:20px;">Date</th>
+            <td mat-cell *matCellDef="let Request">{{Request.booking}}</td>
+        </ng-container>
+
+        
+
+        <ng-container matColumnDef="Comment">
+            <th mat-header-cell *matHeaderCellDef style="font-size:20px;">Comments</th>
+            <td mat-cell *matCellDef="let Request">{{Request.comment}}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="Status">
+            <th mat-header-cell *matHeaderCellDef style="font-size:20px;">Status</th>
+            <td mat-cell *matCellDef="let Request">{{Request.status}}</td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef style="font-size:20px;">Cancel</th>
+            <td mat-cell *matCellDef="let Request">
+
+                <a  class="btn text-light m-1" (click)="cancelRequest(Request.id)">Cancel</a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay" class=""></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;" class="mat-row"></tr>
+    </table>
+
+</div>

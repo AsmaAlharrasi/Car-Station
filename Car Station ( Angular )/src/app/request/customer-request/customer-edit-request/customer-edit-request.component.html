@@ -1,0 +1,65 @@
+<div class="bordercp-3 mt-4">
+    <div class="row pb-2">
+        <h2 class=" col-6 mb-2" style="font-size:40px; color:#9AC8CD;">Edit Request</h2>
+        <div class="col-6 text-end">
+            <a class="btn text-light mb-2" [routerLink]="[ '/ViewCustomerRequest']">Back</a>
+
+        </div>
+        <hr />
+    </div>
+    <form  [formGroup]="UpdateRequestForm" (ngSubmit)="UpdateData()">
+        @if(request!=null){
+            <div class="form-floating mb-3 w-50">
+                <select class="form-select" id="serviceType" formControlName="Request_Id" readonly  value="{{ request.id }}" >
+                  <option value="empty">-- Service Type --</option>
+                  <option value="1">Full body wash</option>
+                  <option value="2">Oil Change</option>
+                  <option value="3">Interior Cleaning</option>
+                </select>
+                <label for="serviceType">Select Service Type</label>
+              </div>
+          
+              <div class="form-floating mb-3 w-50">
+                <input type="date" class="form-control" id="date" formControlName="Request_Date" readonly  value="{{ request.date }}">
+                <label for="date">Enter Date</label>
+              </div>
+          
+              <div class="form-floating mb-3 w-50">
+                <input type="time" class="form-control" id="time"formControlName="Request_Time" readonly  value="{{ request.time }}">
+                <label for="time">Enter Time</label>
+              </div>
+          
+              <div class="form-floating mb-3  w-50">
+                <textarea class="form-control" placeholder="Leave a comment here" id="comment" formControlName="Request_Comment" readonly  value="{{ request.comment }}"
+                  style="height: 100px"></textarea>
+                <label for="comment">Comments</label>
+              </div>
+          
+              <div class="d-flex">
+          
+                <div class="form-floating mb-3 w-25 ">
+                  <select class="form-select" id="floatingSelectCar" >
+                    <option value="empty">-- My Cars --</option>
+                    <option value="1">Car 1</option>
+                    <option value="2">Car 2</option>
+                    <option value="3">Car 3</option>
+                  </select>
+                  <label for="floatingSelectCar">Select a Car</label>
+                </div>
+          
+                <div>
+                  <button type="button" class="btn text-light mt-2 mx-5" [routerLink]="[ '/AddCar' ]">Add New Car</button>
+                </div>
+          
+              </div>
+          
+              <div class="d-flex justify-content-between mt-3">
+                <button type="submit" class="btn text-light " >submit</button>
+                <!-- <button type="button" class="btn text-light" [routerLink]="[ '/' ]">Back</button> -->
+              </div>
+          
+    
+        }
+      </form>
+   
+

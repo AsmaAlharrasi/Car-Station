@@ -1,0 +1,68 @@
+<div class="bordercp-3 mt-4">
+
+    <div class="row pb-2">
+        <h2 class=" col-6 mb-2" style="font-size:40px; color:#9AC8CD;">Employee Profile</h2>
+        <div class="col-6 text-end">
+            <a style="background-color: #9AC8CD;" class="btn text-light mb-2" [routerLink]="[ '/ViewEmployeeRequests', employee.id ]">
+                View Requests</a>
+        </div>
+        <hr />
+    </div>
+
+    <div class="row gutters-sm mt-5">
+        <div class="col-md-4 mb-3 ">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                            width="150">
+                        <div class="mt-3">
+                            <h1>{{employee.firstName}} {{employee.middleName}} {{employee.lastName}}</h1>
+                            <p class="text-secondary mb-1">{{employee.email}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="card mb-3 p-2 shadow-sm ">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0">Full Name</h4>
+                        </div>
+                        
+                        <p class="col-sm-9 text-secondary">{{employee.firstName}} {{employee.middleName}}   {{employee.lastName}}</p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0">Email</h4>
+                        </div>
+                        <p class="col-sm-9 text-secondary">{{employee.email}}</p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0">Phone</h4>
+                        </div>
+                        <p class="col-sm-9 text-secondary">{{employee.phoneNumber}}</p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0">Birthday</h4>
+                        </div>
+                        <p class="col-sm-9 text-secondary"> {{employee.birthDate}} </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

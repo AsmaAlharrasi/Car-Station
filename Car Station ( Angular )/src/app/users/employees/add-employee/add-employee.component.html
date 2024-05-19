@@ -1,0 +1,61 @@
+<div class="bordercp-3 mt-4">
+  <div class="row pb-2">
+    <h2 class="col-6 mb-2" style="font-size:40px; color:#9AC8CD;">Add Employee</h2>
+    <div class="col-6 text-end">
+      <a class="btn text-light mb-2" style="background-color: #9AC8CD;" [routerLink]="['/ViewAllEmployeeComponent']">Back</a>
+    </div>
+    <hr />
+  </div>
+
+
+    
+    <form [formGroup]="employeeGroup" (ngSubmit)="onSubmit()">
+
+      <mat-form-field class="w-25">
+        <mat-label>First Name:</mat-label>
+        <input matInput type="text"  formControlName="firstName" required>
+      </mat-form-field>
+
+      <mat-form-field class="w-25 mx-1">
+        <mat-label>Middle Name:</mat-label>
+        <input matInput type="text" formControlName="middleName" required>
+      </mat-form-field><br>
+
+      <mat-form-field class="w-25">
+        <mat-label>Last Name:</mat-label>
+        <input matInput type="text" formControlName="lastName" required>
+      </mat-form-field>
+  
+      <mat-form-field class="w-25 mx-1">
+        <mat-label>Phone Number:</mat-label>
+        <input matInput type="text" formControlName="phoneNumber" required>
+      </mat-form-field><br>
+
+      <mat-form-field class="w-25">
+        <mat-label>Email:</mat-label>
+        <input matInput type="text" formControlName="email" required>
+      </mat-form-field>
+
+      <mat-form-field class="w-25 mx-1">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender" required>
+          <mat-option value=0> Male </mat-option>
+          <mat-option value=1> Female </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <mat-form-field class="w-25">
+        <mat-label>Salary:</mat-label>
+        <input matInput type="text" formControlName="salary" required>
+      </mat-form-field>
+
+      <mat-form-field class="w-25 mx-1">
+        <mat-label>Birth Date:</mat-label>
+        <input matInput type="date" formControlName="DoB" required>
+      </mat-form-field><br>
+  
+      <button mat-raised-button type="submit" color="warn">Add</button>
+      <!-- <button mat-raised-button [routerLink]="['/ViewAllEmployeeComponent']" color="basic" class="mx-3">Back</button> -->
+  
+    </form>
+  </div>

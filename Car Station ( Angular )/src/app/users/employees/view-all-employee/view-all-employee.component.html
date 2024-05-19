@@ -1,0 +1,63 @@
+<div class="bordercp-3 mt-4">
+
+
+<div class="row pb-2">
+    <h2 class=" col-6 mb-2" style="font-size:40px; color:#9AC8CD;">Our Employees</h2>
+    <div class="col-6 text-end">
+        <a style="background-color: #9AC8CD;" class="btn text-light mb-2"[routerLink]="[ '/AddEmployee' ]">Add Employee</a>
+        <!-- <a class="btn text-light mb-2">Add New Customer</a> -->
+    </div>
+    <hr />
+</div>
+
+<table mat-table [dataSource]="Employees" class="mat-elevation-z5">
+    
+    <ng-container matColumnDef="Full Name">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let employee">{{employee.firstName}} {{employee.middleName}} {{employee.lastName}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Gender">
+      <th mat-header-cell *matHeaderCellDef>Gender</th>
+      <td mat-cell *matCellDef="let employee">{{employee.gender}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Birth Date">
+      <th mat-header-cell *matHeaderCellDef>Birth Date</th>
+      <td mat-cell *matCellDef="let employee">{{employee.birthDate}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Phone Number">
+        <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+        <td mat-cell *matCellDef="let employee">{{employee.phoneNumber}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let employee">{{employee.email}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Salary">
+        <th mat-header-cell *matHeaderCellDef>Salary</th>
+        <td mat-cell *matCellDef="let employee">{{employee.salary}}</td>
+      </ng-container>
+
+     
+    
+    
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let employee"> 
+        <a  class="btn text-light m-1" [routerLink]="['/EditEmployee', employee.id]"> Edit</a> 
+        <a  class="btn text-light m-1"   (click)="deleteEmployee(employee)"> Delete</a>
+      </td>
+    </ng-container>
+    
+    <!-- Row with columns -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    
+  </table>
+
+
+</div>

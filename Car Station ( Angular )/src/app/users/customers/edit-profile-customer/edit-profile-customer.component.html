@@ -1,0 +1,57 @@
+<div class="bordercp-3 mt-4">
+  <div class="row pb-2">
+    <h2 class=" col-6 mb-2" style="font-size:40px; color:#9AC8CD;">Edit My Profile</h2>
+    <div class="col-6 text-end">
+      <a class="btn text-light mb-2" [routerLink]="[ '/ViewCustomerProfile']">Back</a>
+    </div>
+    <hr />
+  </div>
+
+  <form [formGroup]="UpdateCustomerForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="w-50">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" formControlName="firstName" required>
+    </mat-form-field><br>
+
+    <mat-form-field class="w-50">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" formControlName="lastName" required>
+    </mat-form-field><br>
+
+    <mat-form-field class="w-50">
+      <mat-label>Middle Name</mat-label>
+      <input matInput type="text" formControlName="middleName" required>
+    </mat-form-field><br>
+  
+
+      <mat-form-field class="w-50">
+        <mat-label>email</mat-label>
+        <input matInput type="email" formControlName="email" required>
+      </mat-form-field><br>
+
+      <mat-form-field class="w-50">
+        <mat-label>Birth Date</mat-label>
+        <input matInput type="Date" formControlName="birthDate" required>
+      </mat-form-field><br>
+
+      <mat-form-field class="w-50">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="text" formControlName="phoneNumber" required>
+      </mat-form-field><br>
+
+      <mat-form-field class="w-50">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender" required>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <button mat-raised-button type="submit" color="warn">Save</button>
+      <!-- <button mat-raised-button [routerLink]="['/']" color="basic" class="mx-3">Back</button> -->
+  </form>
+</div>
+
+ 

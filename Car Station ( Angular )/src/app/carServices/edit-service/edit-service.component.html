@@ -1,0 +1,34 @@
+<div class="bordercp-3 mt-4">
+    <div class="row pb-2">
+        <h2 class=" col-6 mb-2" style="font-size:40px; color:#9AC8CD;">Edit Service</h2>
+        <div class="col-6 text-end">
+            <a class="btn text-light mb-2" [routerLink]="[ '/ViewAllService']">Back</a>
+
+        </div>
+        <hr />
+    </div>
+    <form [formGroup]="UpdateServiceForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field class="w-50">
+        <mat-label>Srvice Type</mat-label>
+        <input matInput type="text" formControlName="type" >
+      </mat-form-field><br>
+  
+      <mat-form-field class="w-50">
+        <mat-label>Price</mat-label>
+        <input matInput type="text" formControlName="price" >
+      </mat-form-field><br>
+ 
+  
+    <mat-form-field class="w-50" >
+          <mat-label>Description</mat-label>
+            <input matInput type="text" formControlName="description" >
+          </mat-form-field><br> 
+  
+  
+  
+      <button mat-raised-button type="submit" color="warn">Save</button>
+      <!-- <button mat-raised-button [routerLink]="['/']" color="basic" class="mx-3">Back</button> -->
+  
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="bordercp-3 mt-4">
+
+    <div class="row pb-2">
+        <h2 class=" col-6 mb-2" style="font-size:40px; color:#9AC8CD;"> Our Services </h2>
+        <div class="col-6 text-end">
+            <a class="btn text-light mb-2" [routerLink]="[ '/' ]">Back</a>
+            <!-- <a class="btn text-light mb-2" [routerLink]="[ '/AddNewService' ]">Add New Service</a> -->
+        </div>
+        <hr />
+    </div>
+
+    <!-- @for="let service of carServices; trackBy: trackByServiceId" -->
+    <div class="" *ngFor="let service of carServices">
+        <div class="w-25">
+            <mat-card class="item-card shadow">
+                <mat-card-header>
+                    <mat-card-subtitle>Service Type</mat-card-subtitle>
+                    <mat-card-title>{{ service.type }}</mat-card-title>
+
+                    <mat-card-subtitle>Price</mat-card-subtitle>
+                    <mat-card-title>{{ service.currency }}</mat-card-title>
+
+                    <!-- <mat-card-subtitle>Description</mat-card-subtitle>
+                    <mat-card-title>{{ service.description }}</mat-card-title> -->
+
+                </mat-card-header>
+                    <mat-card-content>
+                        <a class="btn text-light mt-4" (click)="moreDetails(service.id)"> More Detail</a>
+                    </mat-card-content>
+               
+            </mat-card>
+        </div>
+        <br>
+    </div>
+    <!-- <a class="btn text-light m-1" [routerLink]="[ '/CustomerAddRequest']"> Book</a> -->
+</div>

@@ -1,0 +1,36 @@
+<div class="bordercp-3 mt-4">
+    <div class="row pb-2">
+        <h2 class=" col-6 mb-2" style="font-size:40px; color:#9AC8CD;">Service Details</h2>
+        <div class="col-6 text-end">
+            <a class="btn text-light mb-2" [routerLink]="[ '/ViewAllServices' ]">Back</a>
+        </div>
+        <hr />
+    </div>
+    <div>
+        @if(carServices != null){
+
+            <div class="" >
+                <div class="w-50" >
+                    <mat-card class="item-card p-4 shadow">
+                        <mat-card-subtitle>Service Type</mat-card-subtitle>
+                        <mat-card-title>{{ carServices.type }}</mat-card-title><br>
+    
+                        <mat-card-subtitle>Price</mat-card-subtitle>
+                        <mat-card-title>{{ carServices.currency }}</mat-card-title><br>
+    
+                        <mat-card-subtitle>Description</mat-card-subtitle>
+                        <mat-card-title>{{ carServices.description }}</mat-card-title>
+                    </mat-card>
+                    </div>
+                    <br>
+                </div>
+            }
+ 
+
+    </div>
+    <div class="d-flex  mt-3">
+        <!-- <button type="submit" class="btn text-light" [routerLink]="[ '/CustomerAddRequest' ]" >book</button> -->
+        <!-- <button type="button" class="btn text-light mx-5" [routerLink]="[ '/' ]">Back</button> -->
+      </div>
+    </div>
+  
